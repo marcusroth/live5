@@ -12,6 +12,15 @@ modules:
     path: db
     requires:
       - name: hdi-container
+
+  - name: node
+    type: nodejs
+    path: node
+    provides:
+     - name: node_api
+       properties:
+          url: ${default-url}
+
 resources:
   - name: live5uaa
     type: com.sap.xs.uaa
