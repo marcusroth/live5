@@ -6,13 +6,13 @@ modules:
     type: html5
     path: uidev
     requires:
-      - name: live5uaa
-      - name: node_api
-    	group: destinations
-    	properties:
-    		name: node_be
-    		url: ~{service_url}
-    		forwardAuthToken: true
+      name: live5uaa
+      name: node_api
+      group: destinations
+      properties:
+      name: node_be
+      url: ~{service_url}
+      forwardAuthToken: true
   - name: db
     type: hdb
     path: db
