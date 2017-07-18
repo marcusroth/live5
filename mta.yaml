@@ -7,6 +7,12 @@ modules:
     path: uidev
     requires:
       - name: live5uaa
+      - name: node_api
+    	group: destinations
+    	properties:
+    		name: node_be
+    		url: ~{service_url}
+    		forwardAuthToken: true
   - name: db
     type: hdb
     path: db
@@ -16,10 +22,13 @@ modules:
   - name: node
     type: nodejs
     path: node
+    requires:
+    - name: hdi-container
+    - name: live5uaa
     provides:
      - name: node_api
        properties:
-          url: ${default-url}
+          service_url: ${default-url}
 
 resources:
   - name: live5uaa
